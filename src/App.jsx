@@ -1,7 +1,8 @@
 import CardGrid from "./CardGrid"
+import new from "./new"
 function App(){
   return(
-    <CardGrid/>
+    <new/>
   )
 }
 export default App
