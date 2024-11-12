@@ -1,0 +1,91 @@
+*{
+    background-color: skyblue;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #232523;
+    overflow-x: hidden;
+    height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+input{
+    display: none;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#s1:checked~.cards #slide4,
+#s2:checked~.cards #slide5,
+#s3:checked~.cards #slide1,
+#s4:checked~.cards #slide2,
+#s5:checked~.cards #slide3{
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 45%);
+    transform: translate3d(-70%, 0, -220px);
+    --current-color1: #eceaed;
+    --current-color2: #404457;
+}
+
+#s1:checked~.cards #slide5,
+#s2:checked~.cards #slide1,
+#s3:checked~.cards #slide2,
+#s4:checked~.cards #slide3,
+#s5:checked~.cards #slide4{
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 45%);
+    transform: translate3d(-35%, 0, -120px);
+    --current-color1: #eceaed;
+    --current-color2: #404457;
+}
+
+#s1:checked~.cards #slide1,
+#s2:checked~.cards #slide2,
+#s3:checked~.cards #slide3,
+#s4:checked~.cards #slide4,
+#s5:checked~.cards #slide5{
+
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 50%);
+    transform: translate3d(0, 0, 0);
+    --current-color1: #fad00c;
+    --current-color2: #eceaed;
+}
+
+#s1:checked~.cards #slide2,
+#s2:checked~.cards #slide3,
+#s3:checked~.cards #slide4,
+#s4:checked~.cards #slide5,
+#s5:checked~.cards #slide1{
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 45%);
+    transform: translate3d(-35%, 0, -120px);
+    --current-color1: #eceaed;
+    --current-color2: #404457;
+}
+
+#s1:checked~.cards #slide3,
+#s2:checked~.cards #slide4,
+#s3:checked~.cards #slide5,
+#s4:checked~.cards #slide1,
+#s5:checked~.cards #slide2{
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 45%);
+    transform: translate3d(-70%, 0, -220px);
+    --current-color1: #eceaed;
+    --current-color2: #404457;
+}

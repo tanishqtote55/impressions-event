@@ -1,8 +1,8 @@
-import CardGrid from "./CardGrid"
-import new from "./new"
+import Slider from "./slider"
+import './index.css'
 function App(){
   return(
-    <new/>
+    <Slider/>
   )
 }
-export default App
+export default App;

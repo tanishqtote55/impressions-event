@@ -1,0 +1,38 @@
+[
+    {
+        "image": "image/img1.png",
+        "title": "Slider 01",
+        "category": "design",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex."
+    },
+    {
+        "image": "image/img2.jpg",
+        "title": "Slider 02",
+        "category": "design",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex."
+    },
+    {
+        "image": "image/img3.jpg",
+        "title": "Slider 03",
+        "category": "design",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex."
+    },
+    {
+        "image": "image/img4.jpg",
+        "title": "Slider 04",
+        "category": "design",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex."
+    },
+    {
+        "image": "image/img5.jpg",
+        "title": "Slider 05",
+        "category": "design",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex."
+    },
+    {
+        "image": "image/img5.jpg",
+        "title": "Slider 05",
+        "category": "design",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex."
+    }
+]
