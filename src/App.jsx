@@ -1,7 +1,7 @@
-import CardGrid from "./CardGrid"
+import Events from "./events"
 function App(){
   return(
-    <CardGrid/>
+    <Events />
   )
 }
 export default App
