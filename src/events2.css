@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-body{
-    font-family: Poppins;
+
+body {
+    font-family: Poppins, sans-serif;
     margin: 0;
     background-color: #010101;
     color: #eee;
 }
-svg{
+
+svg {
     width: 25px;
 }
-header{
+
+header {
     width: 1200px;
     max-width: 90%;
     margin: auto;
@@ -20,10 +23,12 @@ header{
     position: relative;
     z-index: 100;
 }
-header .logo{
+
+header .logo {
     font-weight: bold;
 }
-header .menu{
+
+header .menu {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -32,36 +37,38 @@ header .menu{
     gap: 20px;
     font-weight: 500;
 }
-/* css slider */
-.slider{
+
+.slider {
     height: 100vh;
     margin-top: -50px;
     position: relative;
 }
-.slider .list .item{
+
+.slider .list .item {
     position: absolute;
-    inset: 0 0 0 0;
+    inset: 0;
     overflow: hidden;
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
 }
-.slider .list .item img{
+
+.slider .list .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.slider .list .item::after{
+
+.slider .list .item::after {
     content: '';
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(
-        to top, #000 40%, transparent
-    );
+    background-image: linear-gradient(to top, #000 40%, transparent);
 }
-.slider .list .item .content{
+
+.slider .list .item .content {
     position: absolute;
     left: 10%;
     top: 20%;
@@ -69,56 +76,67 @@ header .menu{
     max-width: 80%;
     z-index: 1;
 }
-.slider .list .item .content p:nth-child(1){
+
+.slider .list .item .content p:nth-child(1) {
     text-transform: uppercase;
     letter-spacing: 10px;
 }
-.slider .list .item .content h2{
+
+.slider .list .item .content h2 {
     font-size: 100px;
     margin: 0;
 }
-.slider .list .item.active{
+
+.slider .list .item.active {
     opacity: 1;
     z-index: 10;
 }
+
 @keyframes showContent {
-    to{
+    to {
         transform: translateY(0);
         filter: blur(0);
         opacity: 1;
     }
 }
+
 .slider .list .item.active p:nth-child(1),
 .slider .list .item.active h2,
-.slider .list .item.active p:nth-child(3){
+.slider .list .item.active p:nth-child(3) {
     transform: translateY(30px);
     filter: blur(20px);
     opacity: 0;
-    animation: showContent .5s .7s ease-in-out 1 forwards;
+    animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
 }
-.slider .list .item.active h2{
+
+.slider .list .item.active h2 {
     animation-delay: 1s;
 }
-.slider .list .item.active p:nth-child(3){
+
+.slider .list .item.active p:nth-child(3) {
     animation-duration: 1.3s;
 }
-.arrows{
+
+/* .arrows {
     position: absolute;
     top: 35%;
-    /* right: 50px; */
     z-index: 100;
+} */
+
+.arrows {
+    position: absolute;
+    top: 35%;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-.arrows .prev{
-    position: absolute;
-    left: 50px;
-}
-
-.arrows .next{
-    position: absolute;
-    left: 1445px;
-}
-.arrows button{
+/* Styling for previous and next buttons */
+.arrows .prev, 
+.arrows .next {
     background-color: #eee5;
     border: none;
     font-family: monospace;
@@ -127,15 +145,18 @@ header .menu{
     border-radius: 5px;
     font-size: x-large;
     color: #eee;
-    transition: .5s;
+    transition: 0.5s;
+    cursor: pointer;
 }
-.arrows button:hover{
+
+/* Hover effect for buttons */
+.arrows .prev:hover, 
+.arrows .next:hover {
     background-color: #eee;
     color: black;
 }
-.thumbnail{
+.thumbnail {
     position: absolute;
-    /* bottom: 50px; */
     bottom: 10px;
     z-index: 11;
     display: flex;
@@ -147,66 +168,107 @@ header .menu{
     overflow: auto;
     justify-content: center;
 }
-.thumbnail::-webkit-scrollbar{
+
+.thumbnail::-webkit-scrollbar {
     width: 0;
 }
-.thumbnail .item{
+
+.thumbnail .item {
     width: 150px;
-    /* height: 220px; */
     height: 190px;
-    filter: brightness(.5);
-    transition: .5s;
+    filter: brightness(0.5);
+    transition: 0.5s;
     flex-shrink: 0;
 }
-.thumbnail .item img{
+
+.thumbnail .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
-.thumbnail .item.active{
+
+.thumbnail .item.active {
     filter: brightness(1.5);
 }
-.thumbnail .item .content{
+
+.thumbnail .item .content {
     position: absolute;
     inset: auto 10px 10px 10px;
 }
-/* @media screen and (max-width: 678px) {
-    .thumbnail{
-        justify-content: start;
-    }
-    .slider .list .item .content h2{
-        font-size: 60px;
-    }
-    .arrows{
-        top: 10%;
-    }
-} */
 
 @media screen and (max-width: 1024px) {
     .slider .list .item .content h2 {
         font-size: 70px;
     }
+
     .thumbnail {
-        height: 180px;
+        height: 220px;
+        margin-bottom: 10px;
     }
     .thumbnail .item {
         width: 130px;
     }
+
+    .arrows .prev,
+    .arrows .next {
+        width: 35px;
+        height: 35px;
+        font-size: large;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .arrows {
+        top: auto; /* Remove top alignment */
+        bottom: 60%; /* Move arrows to the bottom */
+        width: 100%; /* Full width container */
+        padding: 0 10px; /* Adjust padding for responsiveness */
+        justify-content: space-between; /* Keep arrows at ends */
+    }
+
+    .arrows .prev {
+        position: absolute;
+        left: 10px; /* Stick to the left */
+    }
+
+    .arrows .next {
+        position: absolute;
+        right: 10px; /* Stick to the right */
+    }
+
+    .arrows .prev, 
+    .arrows .next {
+        width: 50px; /* Adjust button size */
+        height: 50px;
+        font-size: large;
+    }
+
     header {
         grid-template-columns: 40px 1fr 40px;
     }
+
+    .slider .list .item .content {
+        top: 40%;
+    }
+
     .slider .list .item .content h2 {
         font-size: 50px;
     }
+
     .thumbnail {
-        height: 120px;
+        height: 200px;
+        margin-bottom: 70px;
     }
+
     .thumbnail .item {
-        width: 100px;
+        width: 120px;
+    }
+
+    .arrows .prev,
+    .arrows .next {
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -215,41 +277,53 @@ header .menu{
         gap: 15px;
         font-size: 12px;
     }
+
+    .slider .list .item .content {
+        top: 40%;
+    }
+
     .slider .list .item .content h2 {
         font-size: 35px;
     }
+
     .thumbnail {
-        height: 150px;
+        height: 180px;
         padding: 0 10px;
     }
+
     .thumbnail .item {
-        width: 100px;
-        height: 120px;
+        width: 110px;
+        height: 140px;
     }
+
     .arrows {
         display: none;
     }
-    
 }
 
 @media screen and (max-width: 480px) {
-    .slider .list .item .content{
+    .slider .list .item .content {
         top: 40%;
     }
+
     .slider .list .item .content h2 {
         font-size: 30px;
     }
+
     .slider .list .item .content p:nth-child(1) {
         letter-spacing: 5px;
     }
-    .thumbnail{
+
+    .thumbnail {
         margin-bottom: 50px;
         height: 150px;
     }
+
     .thumbnail .item {
-        width: 90px;
-        height: 120px;
+        width: 100px;
+        height: 140px;
     }
+
     .arrows {
         display: none;
     }
