@@ -224,7 +224,7 @@
 // export default events;
 
 import React, { useState, useEffect } from 'react';
-import './events.css';
+import './events2.css';
 
 function Events() {
     const [itemActive, setItemActive] = useState(0); // Track the active item
@@ -235,6 +235,7 @@ function Events() {
         { img: '/image/img2.jpg', title: 'Slider 02', content: 'Lorem ipsum dolor sit amet...' },
         { img: '/image/img3.jpg', title: 'Slider 03', content: 'Lorem ipsum dolor sit amet...' },
         { img: '/image/img4.jpg', title: 'Slider 04', content: 'Lorem ipsum dolor sit amet...' },
+        { img: '/image/img5.jpg', title: 'Slider 05', content: 'Lorem ipsum dolor sit amet...' },
         { img: '/image/img5.jpg', title: 'Slider 05', content: 'Lorem ipsum dolor sit amet...' },
     ];
 
@@ -272,7 +273,7 @@ function Events() {
     return (
         <div className="body">
             <header>
-                <div className="logo">Lundev</div>
+                <div className="logo">Impressions</div>
                 <ul className="menu">
                     <li>Home</li>
                     <li>Blog</li>
@@ -300,8 +301,8 @@ function Events() {
                 </div>
 
                 <div className="arrows">
-                    <button onClick={handlePrevClick}>&lt;</button>
-                    <button onClick={handleNextClick}>&gt;</button>
+                    <button className="prev" onClick={handlePrevClick}>&lt;</button>
+                    <button className="next" onClick={handleNextClick}>&gt;</button>
                 </div>
 
                 <div className="thumbnail">

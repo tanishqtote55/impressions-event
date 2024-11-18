@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-.body{
+body{
     font-family: Poppins;
     margin: 0;
     background-color: #010101;
@@ -104,9 +104,19 @@ header .menu{
 }
 .arrows{
     position: absolute;
-    top: 30%;
-    right: 50px;
+    top: 35%;
+    /* right: 50px; */
     z-index: 100;
+}
+
+.arrows .prev{
+    position: absolute;
+    left: 50px;
+}
+
+.arrows .next{
+    position: absolute;
+    left: 1445px;
 }
 .arrows button{
     background-color: #eee5;
@@ -125,7 +135,8 @@ header .menu{
 }
 .thumbnail{
     position: absolute;
-    bottom: 50px;
+    /* bottom: 50px; */
+    bottom: 10px;
     z-index: 11;
     display: flex;
     gap: 10px;
@@ -140,8 +151,9 @@ header .menu{
     width: 0;
 }
 .thumbnail .item{
-    width: 160px;
-    height: 220px;
+    width: 150px;
+    /* height: 220px; */
+    height: 190px;
     filter: brightness(.5);
     transition: .5s;
     flex-shrink: 0;
@@ -159,7 +171,7 @@ header .menu{
     position: absolute;
     inset: auto 10px 10px 10px;
 }
-@media screen and (max-width: 678px) {
+/* @media screen and (max-width: 678px) {
     .thumbnail{
         justify-content: start;
     }
@@ -168,5 +180,77 @@ header .menu{
     }
     .arrows{
         top: 10%;
+    }
+} */
+
+@media screen and (max-width: 1024px) {
+    .slider .list .item .content h2 {
+        font-size: 70px;
+    }
+    .thumbnail {
+        height: 180px;
+    }
+    .thumbnail .item {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        grid-template-columns: 40px 1fr 40px;
+    }
+    .slider .list .item .content h2 {
+        font-size: 50px;
+    }
+    .thumbnail {
+        height: 120px;
+    }
+    .thumbnail .item {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header .menu {
+        gap: 15px;
+        font-size: 12px;
+    }
+    .slider .list .item .content h2 {
+        font-size: 35px;
+    }
+    .thumbnail {
+        height: 150px;
+        padding: 0 10px;
+    }
+    .thumbnail .item {
+        width: 100px;
+        height: 120px;
+    }
+    .arrows {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .slider .list .item .content{
+        top: 40%;
+    }
+    .slider .list .item .content h2 {
+        font-size: 30px;
+    }
+    .slider .list .item .content p:nth-child(1) {
+        letter-spacing: 5px;
+    }
+    .thumbnail{
+        margin-bottom: 50px;
+        height: 150px;
+    }
+    .thumbnail .item {
+        width: 90px;
+        height: 120px;
+    }
+    .arrows {
+        display: none;
     }
 }
