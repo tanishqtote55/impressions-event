@@ -224,7 +224,7 @@
 // export default events;
 
 import React, { useState, useEffect } from 'react';
-import './events2.css';
+import './events3.css';
 
 function Events() {
     const [itemActive, setItemActive] = useState(0); // Track the active item
@@ -269,6 +269,68 @@ function Events() {
     const handleThumbnailClick = (index) => {
         setItemActive(index);
     };
+
+    // useEffect(() => {
+    //     if (window.innerWidth <= 600) { // Adjust for mobile view
+    //         const activeThumbnail = document.querySelector('.thumbnail .item.active');
+    //         if (activeThumbnail) {
+    //             const container = document.querySelector('.thumbnail');
+    //             const containerWidth = container.offsetWidth;
+    //             const thumbnailWidth = activeThumbnail.offsetWidth;
+    
+    //             // Calculate the scroll position to center the active thumbnail
+    //             const scrollPosition =
+    //                 activeThumbnail.offsetLeft - (containerWidth / 2) + (thumbnailWidth / 2);
+    
+    //             container.scrollTo({
+    //                 left: scrollPosition,
+    //                 behavior: 'smooth',
+    //             });
+    //         }
+    //     }
+    // }, [itemActive]);
+
+    useEffect(() => {
+        if (window.innerWidth <= 600) { // Adjust for mobile view
+            const activeThumbnail = document.querySelector('.thumbnail .item.active');
+            if (activeThumbnail) {
+                const container = document.querySelector('.thumbnail');
+                const containerWidth = container.offsetWidth;
+                const thumbnailWidth = activeThumbnail.offsetWidth;
+    
+                // Calculate the scroll position to center the active thumbnail
+                const scrollPosition =
+                    activeThumbnail.offsetLeft - (containerWidth / 2) + (thumbnailWidth / 2);
+            
+
+                // Smooth scroll logic
+                let start = container.scrollLeft;
+                let change = scrollPosition - start;
+                let duration = 600; // Smoothness duration in milliseconds
+                let currentTime = 0;
+                const increment = 20;
+    
+                function animateScroll() {
+                    currentTime += increment;
+                    const val = easeInOutQuad(currentTime, start, change, duration);
+                    container.scrollLeft = val;
+                    if (currentTime < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+    
+                // Easing function for smooth effect
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                }
+    
+                animateScroll();
+            }
+        }
+    }, [itemActive]);
 
     return (
         <div className="body">

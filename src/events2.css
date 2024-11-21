@@ -165,7 +165,8 @@ header .menu {
     height: 250px;
     padding: 0 50px;
     box-sizing: border-box;
-    overflow: auto;
+    overflow-x: auto;
+    /* scroll-behavior: smooth; */
     justify-content: center;
 }
 
@@ -315,8 +316,8 @@ header .menu {
     }
 
     .thumbnail {
-        margin-bottom: 50px;
-        height: 150px;
+        margin-bottom: 40px;
+        height: 160px;
     }
 
     .thumbnail .item {
